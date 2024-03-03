@@ -2,8 +2,8 @@
 **NumberToWord** is a package that enables you to easily convert number to word with two options are Vietnamese and English.
 ## Usage
 ```sh
-import 'package:num_to_word_en_vi/text_to_word.dart';
-final value = NumberToWord(number: 501500, language: 'en');
+import 'package:num_to_word_en_vi/num_to_word_en_vi.dart';
+final value = NumberToWordEnVi(number: 501500, language: 'en');
 print(value); //Five hundred one thousand five hundred
 ``` 
 ## License
