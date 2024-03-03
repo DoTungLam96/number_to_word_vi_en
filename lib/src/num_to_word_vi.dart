@@ -3,7 +3,10 @@ import 'dart:math';
 class NumberToWordsVi {
   NumberToWordsVi._();
 
-  static addSeperator({result = "", seperator = ""}) {
+  static addSeperator({
+    result = "",
+    seperator = "",
+  }) {
     final array = result.split(" ").reverse();
     final tram = array.findIndex((e) => e == "trăm");
     final nghin = array.findIndex((e) => e == "nghìn");
@@ -233,9 +236,9 @@ class NumberToWordsVi {
       }
       var firstUpperLetter = '';
       if (result.endsWith(" ")) {
-        firstUpperLetter = result + "đồng";
+        firstUpperLetter = result;
       } else {
-        firstUpperLetter = result + " đồng";
+        firstUpperLetter = result;
       }
       return firstUpperLetter.substring(0, 1).toUpperCase() +
           firstUpperLetter.substring(1);

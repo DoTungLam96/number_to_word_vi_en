@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     int num = 100222;
-    final cur = Currency(number: num, language: 'en');
+    final cur = Currency(number: num, language: 'vi');
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
