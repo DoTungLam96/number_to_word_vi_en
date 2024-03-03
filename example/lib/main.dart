@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    final cur = NumberToWord(number: 500500, language: 'vi');
+    final value = NumberToWord(number: 501500, language: 'en');
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
           padding: const EdgeInsets.all(16),
           child: Center(
             child: Text(
-              cur.textToWord(),
+              value.textToWord(),
               style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w400,

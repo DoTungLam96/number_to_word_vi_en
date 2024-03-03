@@ -1,5 +1,3 @@
-import 'dart:math';
-
 class NumberToWordsVi {
   NumberToWordsVi._();
 
@@ -243,7 +241,6 @@ class NumberToWordsVi {
       return firstUpperLetter.substring(0, 1).toUpperCase() +
           firstUpperLetter.substring(1);
     } catch (error) {
-      print(error);
       return "";
     }
   }
