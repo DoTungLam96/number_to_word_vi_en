@@ -6,7 +6,7 @@
 ## Usage
 ```sh
 import 'package:num_to_word_en_vi/num_to_word_en_vi.dart';
-final value = NumberToWordEnVi(number: 501500, language: 'en');
+final value = NumberToWordEnVi(number: 501500, language: 'en').convert();
 print(value); //Five hundred one thousand five hundred
 ``` 
 ## License
