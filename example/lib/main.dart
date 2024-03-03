@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
-import 'package:num_to_word_en_vi/number_to_word.dart';
+import 'package:num_to_word_en_vi/num_to_word_en_vi.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    final value = NumberToWord(number: 501500, language: 'en');
+    final value = NumberToWordEnVi(number: 501500, language: 'en');
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(

@@ -3,7 +3,7 @@
 import 'package:num_to_word_en_vi/src/num_to_word_en.dart';
 import 'package:num_to_word_en_vi/src/num_to_word_vi.dart';
 
-class NumberToWord {
+class NumberToWordEnVi {
   final String? language;
   final int number;
 
@@ -14,7 +14,7 @@ class NumberToWord {
   ///en: English to word
   ///
   ///default: vi
-  NumberToWord({
+  NumberToWordEnVi({
     this.language = 'vi',
     required this.number,
   });
