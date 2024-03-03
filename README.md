@@ -7,6 +7,5 @@ final value = NumberToWord(number: 501500, language: 'en');
 print(value); //Five hundred one thousand five hundred
 ``` 
 ## License
-
-[MIT License]([https://flutter.dev/docs](https://github.com/DoTungLam96/number_to_word_vi_en/blob/main/LICENSE))
+MIT License [here](https://github.com/DoTungLam96/number_to_word_vi_en/blob/main/LICENSE).
 
