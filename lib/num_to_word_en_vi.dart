@@ -18,7 +18,7 @@ class NumberToWordEnVi {
     this.language = 'vi',
     required this.number,
   });
-  String textToWord() {
+  String convert() {
     switch (language) {
       case 'vi':
         return NumberToWordsVi.vnToTextVI(number: number);

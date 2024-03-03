@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
           padding: const EdgeInsets.all(16),
           child: Center(
             child: Text(
-              value.textToWord(),
+              value.convert(),
               style: TextStyle(
                   fontSize: 15,
                   fontWeight: FontWeight.w400,
