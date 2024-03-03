@@ -58,7 +58,7 @@ class NumberToWordsVi {
     "chín trăm",
   ];
 
-  static String getTen(number) {
+  static String _getTen(number) {
     final array = '$number'.split("");
     final first = int.tryParse(array[0]) ?? 0;
     final second = int.tryParse(array[1]) ?? 0;
@@ -81,13 +81,13 @@ class NumberToWordsVi {
     return '${baseTen[first - 1]} ${base[second]}';
   }
 
-  static String getHundred(number) {
+  static String _getHundred(number) {
     final array = '$number'.split("");
     final first = int.tryParse(array[0]) ?? 0;
     final second = int.tryParse(array[1]) ?? 0;
     final third = int.tryParse(array[2]) ?? 0;
     if (second > 0) {
-      return '${baseHundred[first]} ${getTen('$second$third')}';
+      return '${baseHundred[first]} ${_getTen('$second$third')}';
     }
     if (third == 0) {
       return baseHundred[first];
@@ -98,7 +98,7 @@ class NumberToWordsVi {
     return '${baseHundred[first]} linh ${base[third]}';
   }
 
-  static String getThousand(number) {
+  static String _getThousand(number) {
     final reverseArray = '$number'.split("").reversed.toList();
 
     final afterNumber = reverseArray.sublist(0, 3).reversed.toList().join("");
@@ -115,7 +115,7 @@ class NumberToWordsVi {
     var afterText = "";
 
     if ((int.tryParse(afterNumber) ?? 0) >= 1) {
-      afterText = getHundred(afterNumber);
+      afterText = _getHundred(afterNumber);
     }
 
     if (beforeLength == 1) {
@@ -123,12 +123,12 @@ class NumberToWordsVi {
     }
 
     if (beforeLength == 2) {
-      return '${getTen(beforeNumber)} nghìn $afterText';
+      return '${_getTen(beforeNumber)} nghìn $afterText';
     }
-    return '${getHundred(beforeNumber)} nghìn $afterText';
+    return '${_getHundred(beforeNumber)} nghìn $afterText';
   }
 
-  static String getMillion(number) {
+  static String _getMillion(number) {
     final reverseArray = '$number'.split("").reversed.toList();
     final afterNumber = reverseArray.sublist(0, 6).reversed.toList().join("");
     final beforeNumber = int.tryParse(reverseArray
@@ -140,10 +140,10 @@ class NumberToWordsVi {
 
     var afterText = "";
     if ((int.tryParse(afterNumber) ?? 0) > 999) {
-      afterText = getThousand(afterNumber);
+      afterText = _getThousand(afterNumber);
     } else if ((int.tryParse(afterNumber) ?? 0) <= 999 &&
         (int.tryParse(afterNumber) ?? 0) >= 1) {
-      afterText = getHundred(
+      afterText = _getHundred(
           afterNumber.split("").sublist(3, 6).reversed.toList().join(""));
     }
 
@@ -152,13 +152,13 @@ class NumberToWordsVi {
     }
 
     if (beforeLength == 2) {
-      return '${getTen(beforeNumber)} triệu $afterText';
+      return '${_getTen(beforeNumber)} triệu $afterText';
     }
 
-    return '${getHundred(beforeNumber)} triệu $afterText';
+    return '${_getHundred(beforeNumber)} triệu $afterText';
   }
 
-  static String getBillion(number) {
+  static String _getBillion(number) {
     final reverseArray = '$number'.split("").reversed.toList();
 
     final afterNumber = reverseArray.sublist(0, 9).reversed.toList().join("");
@@ -172,13 +172,13 @@ class NumberToWordsVi {
     var afterText = "";
     if ((int.tryParse(afterNumber) ?? 0) > 999999 &&
         (int.tryParse(afterNumber) ?? 0) <= 999999999) {
-      afterText = getMillion(afterNumber);
+      afterText = _getMillion(afterNumber);
     } else if ((int.tryParse(afterNumber) ?? 0) <= 999999 &&
         (int.tryParse(afterNumber) ?? 0) > 999) {
-      afterText = getThousand(afterNumber.split("").sublist(3, 9).join(""));
+      afterText = _getThousand(afterNumber.split("").sublist(3, 9).join(""));
     } else if ((int.tryParse(afterNumber) ?? 0) <= 999 &&
         (int.tryParse(afterNumber) ?? 0) >= 1) {
-      afterText = getHundred(afterNumber.split("").sublist(6, 9).join(""));
+      afterText = _getHundred(afterNumber.split("").sublist(6, 9).join(""));
     }
 
     final beforeLength = '$beforeNumber'.length;
@@ -187,19 +187,19 @@ class NumberToWordsVi {
     }
 
     if (beforeLength == 2) {
-      return '${getTen(beforeNumber)} tỷ $afterText';
+      return '${_getTen(beforeNumber)} tỷ $afterText';
     }
 
     if (beforeLength == 3) {
-      return '${getHundred(beforeNumber)} tỷ $afterText';
+      return '${_getHundred(beforeNumber)} tỷ $afterText';
     }
 
     if (beforeLength > 3 && beforeLength <= 6) {
-      return '${getThousand(beforeNumber)} tỷ $afterText';
+      return '${_getThousand(beforeNumber)} tỷ $afterText';
     }
 
     if (beforeLength > 6 && beforeLength <= 9) {
-      return '${getMillion(beforeNumber)} tỷ $afterText';
+      return '${_getMillion(beforeNumber)} tỷ $afterText';
     }
     return "";
   }
@@ -214,19 +214,19 @@ class NumberToWordsVi {
         result = base[number];
       }
       if (length == 2) {
-        result = getTen(number);
+        result = _getTen(number);
       }
       if (length == 3) {
-        result = getHundred(number);
+        result = _getHundred(number);
       }
       if (length > 3 && length <= 6) {
-        result = getThousand(number);
+        result = _getThousand(number);
       }
       if (length > 6 && length <= 9) {
-        result = getMillion(number);
+        result = _getMillion(number);
       }
       if (length > 9) {
-        result = getBillion(number);
+        result = _getBillion(number);
       }
       if (seperator.toString().isNotEmpty) {
         return addSeperator(result: result, seperator: seperator);

@@ -60,17 +60,17 @@ class NumberToWordEn {
 
     final int thousands = int.parse(strNumber.substring(9, 12));
 
-    final String tradBils = getBillions(bils);
+    final String tradBils = _getBillions(bils);
     String result = tradBils;
 
-    final String tradMils = getMillions(mils);
+    final String tradMils = _getMillions(mils);
     result = result + tradMils;
 
-    final String tradHundredThousands = getThousands(hundredThousands);
+    final String tradHundredThousands = _getThousands(hundredThousands);
     result = result + tradHundredThousands;
 
     String tradThousand;
-    tradThousand = lessThanOneThousand(thousands, true);
+    tradThousand = _lessThanOneThousand(thousands, true);
     result = result + tradThousand;
 
     // remove spaces
@@ -82,39 +82,39 @@ class NumberToWordEn {
   }
 
   ///get Billions
-  static String getBillions(int billions) {
+  static String _getBillions(int billions) {
     String tradBillions;
     switch (billions) {
       case 0:
         tradBillions = '';
         break;
       case 1:
-        tradBillions = '${lessThanOneThousand(billions)} $_billion ';
+        tradBillions = '${_lessThanOneThousand(billions)} $_billion ';
         break;
       default:
-        tradBillions = '${lessThanOneThousand(billions)} $_billion ';
+        tradBillions = '${_lessThanOneThousand(billions)} $_billion ';
     }
     return tradBillions;
   }
 
   ///get Millions
-  static String getMillions(int millions) {
+  static String _getMillions(int millions) {
     String tradMillions;
     switch (millions) {
       case 0:
         tradMillions = '';
         break;
       case 1:
-        tradMillions = '${lessThanOneThousand(millions)} $_million ';
+        tradMillions = '${_lessThanOneThousand(millions)} $_million ';
         break;
       default:
-        tradMillions = '${lessThanOneThousand(millions)} $_million ';
+        tradMillions = '${_lessThanOneThousand(millions)} $_million ';
     }
     return tradMillions;
   }
 
   ///get Thousands
-  static String getThousands(int hundredThousands) {
+  static String _getThousands(int hundredThousands) {
     String tradHundredThousands;
     switch (hundredThousands) {
       case 0:
@@ -122,17 +122,17 @@ class NumberToWordEn {
         break;
       case 1:
         tradHundredThousands =
-            '${lessThanOneThousand(hundredThousands)} $_thousand ';
+            '${_lessThanOneThousand(hundredThousands)} $_thousand ';
         break;
       default:
         tradHundredThousands =
-            '${lessThanOneThousand(hundredThousands)} $_thousand ';
+            '${_lessThanOneThousand(hundredThousands)} $_thousand ';
     }
 
     return tradHundredThousands;
   }
 
-  static String lessThanOneThousand(int number,
+  static String _lessThanOneThousand(int number,
       [bool isLastThreeDigits = false]) {
     String soFar = '';
 
