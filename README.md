@@ -1,4 +1,7 @@
 # Features
+
+[![](https://img.shields.io/pub/v/num_to_word_en_vi)](https://pub.dev/packages/num_to_word_en_vi)
+
 **NumberToWord** is a package that enables you to easily convert number to word with two options are Vietnamese and English.
 ## Usage
 ```sh
