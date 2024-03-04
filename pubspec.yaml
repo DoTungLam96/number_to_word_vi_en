@@ -20,4 +20,10 @@ flutter:
   plugin:
     platforms:
       some_platform:
+        android:
+        ios:
+        linux:
+        macos:
+        web:
+        windows:
         pluginClass: somePluginClass
