@@ -146,7 +146,7 @@ class NumberToWordEn {
       final String unionSeparator =
           ((number ~/ 10).toInt() != 0 && numFirst % 10 != 0) ||
                   (numFirst % 10 != 0 && numFirst < 100)
-              ? " "
+              ? "-"
               : '';
       soFar = _tens[number % 10] + unionSeparator + soFar;
       number = (number ~/ 10).toInt();

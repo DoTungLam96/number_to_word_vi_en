@@ -1,6 +1,6 @@
 name: num_to_word_en_vi
 description: A plugin project to convert numbers to words with Vietnamese/English language.
-version: 1.0.3
+version: 1.0.4
 homepage: https://github.com/DoTungLam96/number_to_word_vi_en.git
 
 environment:

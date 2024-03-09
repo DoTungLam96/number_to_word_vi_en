@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    final value = NumberToWordEnVi(number: 501500, language: 'en');
+    final value = NumberToWordEnVi(number: 5234, language: 'en');
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
